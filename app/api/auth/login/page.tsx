@@ -1,4 +1,4 @@
-import { useState, FormEvent } from 'react';
+import { useState, FormEvent, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import UserService from '@/services/UserService';
 
@@ -16,11 +16,6 @@ export default function Login() {
         try {
 
             const response = await UserService.login(email, password);
-            // const response = await fetch('/api/login', {
-            //     method: 'POST',
-            //     headers: { 'Content-Type': 'application/json' },
-            //     body: JSON.stringify({ email, password }),
-            // });
 
             if (response.ok) {                
                 router.push('/dashboard');

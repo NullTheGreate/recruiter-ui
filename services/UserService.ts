@@ -11,7 +11,7 @@ class UserService {
     }
 
     async login(email: string, password: string) {
-        const response = await fetch(API_END_POINTS.LOGIN, {
+        const response = await fetch('/api/users/login', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email, password }),
@@ -19,6 +19,7 @@ class UserService {
         const data = await response.json();
         return data;
     }
+
 }
 
 export default UserService.getInstance();
