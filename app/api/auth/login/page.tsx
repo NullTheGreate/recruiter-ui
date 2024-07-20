@@ -14,10 +14,10 @@ export default function Login() {
         setError('');
 
         try {
-
             const response = await UserService.login(email, password);
 
-            if (response.ok) {                
+            if (response) {            
+                localStorage.setItem('token', response.token);
                 router.push('/dashboard');
             } else {
                 const data = await response.json();
