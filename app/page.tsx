@@ -1,4 +1,3 @@
-// app/login/page.tsx
 "use client";
 
 import { useState, FormEvent } from 'react';
@@ -7,6 +6,8 @@ import Login from './api/auth/login/page';
 
 export default function Home() {
   return (
-    <><div></div><Login></Login></>
+    <div className="box">
+      <Login></Login>
+    </div>
   );
 }
