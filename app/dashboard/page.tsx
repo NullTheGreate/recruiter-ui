@@ -1,28 +1,42 @@
-import Header from "@/components/layout/header";
+import ApplicantService from "@/services/ApplicantService";
+import { Applicant } from "@/types/applicants";
 import { Box, ListItem } from "@mui/material";
 import Grid2 from "@mui/material/Unstable_Grid2";
+import { useEffect, useState } from "react";
+
 export default function Dashboard() {
+
+    // const [applicants, setApplicants] = useState<Applicant[]>([]);
+    // const [error, setError] = useState<string | null>(null);
+
+    // useEffect(() => {
+    //     const fetchApplicants = async () => {
+    //         try {
+    //             const response = await ApplicantService.getApplicants();
+    //             setApplicants(response);
+    //         } catch (error) {
+    //             setError('Failed to fetch data');
+    //         }
+    //     }
+    // })
+
     return (
-        <div>
-            <Header></Header>
-            <div className="flex size-full min-h-screen">aaaa
+        <div>            
+            <div className="flex size-full">aaaa
                 <Box sx={{ flexGrow: 1 }}>
                     <Grid2 container spacing={2}>
-                        <Grid2 xs={8}>
-                            <ListItem>xs=8</ListItem>
-                        </Grid2>
-                        <Grid2 xs={4}>
-                            <ListItem>xs=4</ListItem>
-                        </Grid2>
-                        <Grid2 xs={4}>
-                            <ListItem>xs=4</ListItem>
-                        </Grid2>
-                        <Grid2 xs={8}>
-                            <ListItem>xs=8</ListItem>
-                        </Grid2>
+                        {/* <ListItem>{ applicants.map((app) => <ListItem>{app.name}</ListItem>)}</ListItem> */}
                     </Grid2>
                 </Box>
-            </div>
+            </div>            
         </div>
     );
 }
+
+// export async function getServerSideProps() {
+//     return {
+//         props: {
+//             applicants: await ApplicantService.getApplicants(),
+//         },
+//     };
+// }
